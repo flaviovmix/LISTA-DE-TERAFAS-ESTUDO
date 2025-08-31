@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
-    <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="1"/>
+    <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/src/ListaTarefas/web/alterarAtivosInativos.jsp</file>
-            <file>file:/C:/src/ListaTarefas/web/deletarTarefa.jsp</file>
-            <file>file:/C:/src/ListaTarefas/web/index.jsp</file>
-            <file>file:/C:/src/ListaTarefas/web/alterarTarefaAtivosInativos.jsp</file>
-            <file>file:/C:/src/ListaTarefas/web/css/paginacao.css</file>
+            <file>file:/C:/src/listaTarefas/src/java/app/Tarefas/pgListarTarefas.java</file>
+            <file>file:/C:/src/listaTarefas/web/index.html</file>
+            <file>file:/C:/src/listaTarefas/src/java/app/Tarefas/TarefaDAO.java</file>
+            <file>file:/C:/src/listaTarefas/src/java/app/Tarefas/TarefasActions.java</file>
+            <file>file:/C:/src/listaTarefas/web/META-INF/context.xml</file>
         </group>
     </open-files>
 </project-private>

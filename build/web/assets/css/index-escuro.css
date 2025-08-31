@@ -1,0 +1,378 @@
+body {
+    background-color: #111; /* fundo escuro */
+    color: #f5f5f5; /* texto claro */
+    font-family: sans-serif;
+    margin: 0;
+    padding-top: 70px;
+}
+
+.task-meta i {
+    margin-right: 6px;
+    color: #aaa;
+}
+.task-meta span {
+    margin-right: 15px;
+    display: inline-block;
+}
+
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background-color: #1e1e1e; /* cabeçalho escuro */
+    padding: 15px 30px;
+    box-shadow: 0 2px 5px rgba(255, 255, 255, 0.05);
+    z-index: 10;
+}
+
+header .container {
+    max-width: 700px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: auto;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 22px;
+    font-weight: bold;
+    color: #fff;
+}
+
+.btn-add {
+    background-color: #2ecc71;
+    color: white;
+    border: none;
+    padding: 8px 14px;
+    font-size: 13px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.btn-add:hover {
+    background-color: #27ae60;
+}
+
+.task-list {
+    max-width: 700px;
+    margin: auto;
+    padding: 20px;
+}
+
+.task {
+    background-color: #1c1c1c; /* fundo escuro */
+    border-left: 5px solid #555;
+    margin-bottom: 10px;
+    padding: 12px 16px;
+    border-radius: 5px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.task.alta {
+    border-left-color: #ff4d4d;
+}
+
+.task.media {
+    border-left-color: orange;
+}
+
+.task.baixa {
+    border-left-color: #00A2E8;
+}
+
+.task-content {
+    display: flex;
+    flex-direction: column;
+}
+
+.task-title {
+    font-weight: bold;
+    font-size: 15px;
+    color: #fff;
+}
+
+.task-meta {
+    font-size: 12px;
+    color: #bbb;
+    margin-top: 4px;
+}
+
+.task-meta span {
+    margin-right: 10px;
+}
+
+.task-actions {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 4px;
+}
+
+.assigned {
+    font-size: 12px;
+    color: #aaa;
+    margin-bottom: 4px;
+}
+
+.locked::after {
+    content: "?";
+    font-size: 13px;
+    color: #999;
+    margin-bottom: 4px;
+}
+
+.repeat::after {
+    content: "?";
+    font-size: 13px;
+    color: #999;
+    margin-bottom: 4px;
+}
+
+.btn {
+    background-color: #333;
+    border: none;
+    color: #f5f5f5;
+    padding: 4px 8px;
+    font-size: 11px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.btn:hover {
+    background-color: #555;
+}
+
+.btn.edit { color: #f1c40f; }
+.btn.concluir { color: #e74c3c; }
+
+.checkbox-container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    cursor: pointer;
+    user-select: none;
+    font-family: sans-serif;
+    font-size: 16px;
+}
+
+.checkbox-container input[type="checkbox"] {
+    appearance: none;
+    -webkit-appearance: none;
+    width: 22px;
+    height: 22px;
+    border: 2px solid #28a745;
+    border-radius: 50%;
+    margin-right: 10px;
+    margin-bottom: 8px;
+    cursor: pointer;
+    position: relative;
+    transition: background-color 0.2s;
+    background-color: transparent;
+}
+
+.checkbox-container .usuario_concluir {
+    display: flex;
+    align-items: center;
+    margin-right: -12px;
+    margin-bottom: -5px;
+}
+
+.descricao {
+    font-size: 13px;
+    padding: 10px 0;
+    color: #ccc;
+}
+
+.checkbox-container input[type="checkbox"]:checked {
+    background-color: #28a745;
+}
+
+.checkbox-container input[type="checkbox"]:checked::after {
+    content: '';
+    position: absolute;
+    top: 4px;
+    left: 4px;
+    width: 10px;
+    height: 10px;
+    background: white;
+    border-radius: 50%;
+}
+
+.save-btn {
+    width: 100px;
+    background-color: #2ecc71;
+    color: white;
+}
+
+.cancel-btn {
+    width: 100px;
+    background-color: #e74c3c;
+    color: white;
+}
+
+.save-btn:hover {
+    background-color: #27ae60;
+}
+
+.cancel-btn:hover {
+    background-color: #c0392b;
+}
+
+.editar-link {
+    text-decoration: none;
+    color: #f5f5f5;
+}
+.editar-link:hover {
+    color: #3498db;
+}
+.link-sem-estilo {
+    color: inherit;
+    text-decoration: none;
+    cursor: pointer;
+}
+.link-sem-estilo:hover {
+    text-decoration: underline;
+    color: #ccc;
+}
+
+.deletar-link {
+    display: inline-block;
+    padding: 6px 12px;
+    background-color: #e74c3c;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    text-decoration: none;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 14px;
+    transition: background-color 0.3s;
+}
+
+.deletar-link:hover {
+    background-color: #c0392b;
+}
+
+.tabela-confirmacao {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: #1e1e1e;
+    border-radius: 8px;
+    overflow: hidden;
+    font-family: "Segoe UI", sans-serif;
+    color: #eee;
+    font-size: 14px;
+}
+
+.tabela-confirmacao tr:not(:last-child) {
+    border-bottom: 1px solid #444;
+}
+
+.tabela-confirmacao td {
+    padding: 12px 16px;
+    vertical-align: middle;
+}
+
+.tabela-confirmacao td:first-child {
+    color: #bbb;
+    width: 35%;
+    white-space: nowrap;
+}
+
+.tabela-confirmacao i {
+    margin-right: 8px;
+    color: #aaa;
+}
+
+.container-imagem {
+    overflow: hidden;
+    border-radius: 8px;
+    width: 300px;
+    margin: 100px auto;
+}
+
+.container-imagem img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+.config-icon {
+    margin-left: auto;
+    font-size: 20px;
+    color: #aaa;
+    text-decoration: none;
+    padding: 8px;
+    transition: color 0.2s;
+}
+
+.config-icon:hover {
+    color: #fff;
+}
+
+.bolinhas-wrapper {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    align-items: center;
+    margin-top: 5px;
+}
+
+.bolinhas-selector {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.tabela-configuracao {
+    margin-top: 10px;
+    width: 100%;
+    border-collapse: collapse;
+    background-color: #1e1e1e;
+    border-radius: 8px;
+    overflow: hidden;
+    font-family: "Segoe UI", sans-serif;
+    color: #eee;
+    font-size: 14px;
+    box-shadow: 0 0 8px rgba(255,255,255,0.05);
+}
+
+.tabela-configuracao tr:not(:last-child) {
+    border-bottom: 1px solid #444;
+}
+
+.tabela-configuracao td {
+    padding: 12px 16px;
+    vertical-align: middle;
+}
+
+.tabela-configuracao td:first-child {
+    color: #ccc;
+    width: 100%;
+    white-space: nowrap;
+}
+
+.tabela-configuracao i {
+    margin-right: 8px;
+    color: #aaa;
+}
+
+.titulo-centro {
+    text-align: center;
+    margin-top: 30px;
+    margin-bottom: 15px;
+    color: #fff;
+}
+
+.opaco {
+    opacity: 0.4;
+    pointer-events: none;
+    user-select: none;
+    filter: grayscale(100%);
+}

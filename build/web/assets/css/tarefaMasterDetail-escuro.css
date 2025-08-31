@@ -1,0 +1,234 @@
+body {
+  background-color: #111;
+  color: #fff;
+  font-family: Arial, sans-serif;
+  padding: 20px;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+  display: flex;
+  gap: 20px;
+  align-items: flex-start; /* ? isso evita o alongamento da .master */
+}
+
+input,
+textarea,
+select {
+  width: 100%;
+  margin-bottom: 15px;
+  padding: 12px 14px; /* ? espaçamento interno */
+  background: #333;
+  border: none;
+  border-radius: 5px;
+  color: #fff;
+  box-sizing: border-box; /* garante que o padding não estoure o tamanho */
+}
+
+.master {
+  flex: 1;
+  background: #1c1c1c;
+  padding: 20px;
+  border-radius: 8px;
+  min-height: 100%; /* ou um valor como 500px */
+}
+
+.master, .detail {
+  background: #1c1c1c;
+  padding: 20px;
+  border-radius: 8px;
+  width: 50%;
+}
+
+h2 {
+  margin-bottom: 15px;
+}
+
+input, textarea, select {
+  width: 100%;
+  margin-bottom: 15px;
+  padding: 10px;
+  background: #333;
+  border: none;
+  border-radius: 5px;
+  color: #fff;
+}
+
+textarea {
+  resize: vertical;
+  height: 80px;
+}
+
+.linha {
+  display: flex;
+  gap: 10px;
+}
+
+.botoes {
+  display: flex;
+  justify-content: space-around;
+}
+
+button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.salvar {
+  background-color: #2ecc71;
+  color: #fff;
+  width: 200px;
+}
+
+.fechar {
+  background-color: #e74c3c;
+  color: #fff;
+  width: 200px;
+}
+
+.editar {
+    background-color: #3498db;
+    color: #fff;
+    width: 200px;
+}
+
+.voltar {
+    position: absolute;
+    top: 40px;
+    background-color: #f9e79f;
+    color: #black;
+    width: 100px; 
+}
+
+.btn-add {
+    position: absolute;
+    top: 40px;
+    background-color: #2ecc71;
+    margin-left: 110px;
+    color: white;
+    border: none;
+    padding: 8px 14px;
+    font-size: 13px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.btn-add:hover {
+    background-color: #27ae60;
+}
+
+.detail {
+    max-height: 100vh;
+    overflow-y: auto;
+    padding-right: 8px;
+}
+
+.detail::-webkit-scrollbar {
+    width: 6px;
+}
+
+.detail::-webkit-scrollbar-thumb {
+    background-color: #ccc;
+    border-radius: 10px;
+}
+
+#lista-tarefas li {
+  background: #2a2a2a;
+  padding: 10px;
+  margin-bottom: 10px;
+  border-left: 5px solid #555;
+  border-radius: 4px;
+}
+
+#lista-tarefas li.baixa { border-color: #27ae60; }
+#lista-tarefas li.media { border-color: #f39c12; }
+#lista-tarefas li.alta  { border-color: #e74c3c; }
+
+input[type="checkbox"] {
+    appearance: none;
+    -webkit-appearance: none;
+    width: 16px;
+    height: 16px;
+    border: 2px solid #28a745;
+    border-radius: 50%; 
+    margin-right: 10px;
+    margin-bottom: 8px;
+    cursor: pointer;
+    position: relative;
+    transition: background-color 0.2s;
+}
+
+input[type="checkbox"]:checked {
+    background-color: white;
+    width: 5px;
+    height: 5px;
+    border: 3px solid #28a745;
+    border-radius: 50%;
+    margin-right: 10px;
+    margin-bottom: 8px;
+    cursor: pointer;
+    position: relative;
+    transition: background-color 0.2s;
+}
+
+ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+.oculto {
+  display: none;
+}
+
+.opaco {
+  opacity: 0.4;
+  pointer-events: none;
+  user-select: none;
+  filter: grayscale(100%);
+}
+
+hr {
+    margin: 30px 0 20px 0;
+}
+
+input::placeholder,
+textarea::placeholder {
+  color: #ddd; /* ou qualquer tom mais claro visível no fundo escuro */
+  opacity: 1; /* garante visibilidade total no Firefox */
+}
+
+.concluida {
+    text-decoration: line-through;
+    color: #555;
+}
+
+.data-concluida {
+    color: #555;
+}
+
+#lista-tarefas li {
+    display: flex;   
+    justify-content: space-between;
+    align-items: center;
+}
+
+.icone-lixeira {
+    color: #ddd;
+    text-decoration: none;
+}
+
+.icone-lixeira:hover {
+    color: red;              /* opcional: mudar cor ao passar o mouse */
+}
+
+.descricao-sub-tarefa {
+    position: relative;
+    top: -15px;
+    font-weight: 600;
+}

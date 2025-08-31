@@ -1,0 +1,220 @@
+body {
+  background-color: #f9f9f9;
+  color: #222;
+  font-family: Arial, sans-serif;
+  padding: 20px;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+  display: flex;
+  gap: 20px;
+  align-items: flex-start; /* evita alongamento da .master */
+}
+
+input,
+textarea,
+select {
+  width: 100%;
+  margin-bottom: 15px;
+  padding: 12px 14px; /* espaçamento interno */
+  background: #fff;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  color: #222;
+  box-sizing: border-box; /* garante que o padding não estoure o tamanho */
+}
+
+.master {
+  flex: 1;
+  background: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  min-height: 100%; /* ou um valor como 500px */
+}
+
+.master, .detail {
+  background: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  width: 50%;
+  border: 1px solid #ddd;
+}
+
+h2 {
+  margin-bottom: 15px;
+  color: #333;
+}
+
+textarea {
+  resize: vertical;
+  height: 80px;
+}
+
+.linha {
+  display: flex;
+  gap: 10px;
+}
+
+.botoes {
+  display: flex;
+  justify-content: space-around;
+}
+
+button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.salvar {
+  background-color: #2ecc71;
+  color: #fff;
+  width: 200px;
+}
+
+.fechar {
+  background-color: #e74c3c;
+  color: #fff;
+  width: 200px;
+}
+
+.editar {
+  background-color: #3498db;
+  color: #fff;
+  width: 200px;
+}
+
+.voltar {
+  position: absolute;
+  top: 40px;
+  background-color: #f9e79f;
+  color: #000;
+  width: 100px; 
+}
+
+.btn-add {
+  position: absolute;
+  top: 40px;
+  background-color: #2ecc71;
+  margin-left: 110px;
+  color: white;
+  border: none;
+  padding: 8px 14px;
+  font-size: 13px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.btn-add:hover {
+  background-color: #27ae60;
+}
+
+.detail {
+  max-height: 100vh;
+  overflow-y: auto;
+  padding-right: 8px;
+}
+
+.detail::-webkit-scrollbar {
+  width: 6px;
+}
+
+.detail::-webkit-scrollbar-thumb {
+  background-color: #bbb;
+  border-radius: 10px;
+}
+
+#lista-tarefas li {
+  background: #fff;
+  padding: 10px;
+  margin-bottom: 10px;
+  border-left: 5px solid #aaa;
+  border-radius: 4px;
+  border: 1px solid #ddd;
+}
+
+#lista-tarefas li.baixa { border-color: #27ae60; }
+#lista-tarefas li.media { border-color: #f39c12; }
+#lista-tarefas li.alta  { border-color: #e74c3c; }
+
+input[type="checkbox"] {
+  appearance: none;
+  -webkit-appearance: none;
+  width: 16px;
+  height: 16px;
+  border: 2px solid #28a745;
+  border-radius: 50%; 
+  margin-right: 10px;
+  margin-bottom: 8px;
+  cursor: pointer;
+  position: relative;
+  transition: background-color 0.2s;
+}
+
+input[type="checkbox"]:checked {
+  background-color: #28a745;
+  border: 2px solid #28a745;
+}
+
+ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+.oculto {
+  display: none;
+}
+
+.opaco {
+  opacity: 0.4;
+  pointer-events: none;
+  user-select: none;
+  filter: grayscale(100%);
+}
+
+hr {
+  margin: 30px 0 20px 0;
+  border-color: #ddd;
+}
+
+input::placeholder,
+textarea::placeholder {
+  color: #777;
+  opacity: 1;
+}
+
+.concluida {
+  text-decoration: line-through;
+  color: #999;
+}
+
+.data-concluida {
+  color: #999;
+}
+
+#lista-tarefas li {
+  display: flex;   
+  justify-content: space-between;
+  align-items: center;
+}
+
+.icone-lixeira {
+  color: #666;
+  text-decoration: none;
+}
+
+.icone-lixeira:hover {
+  color: red;
+}
+
+.descricao-sub-tarefa {
+  position: relative;
+  top: -15px;
+  font-weight: 600;
+}

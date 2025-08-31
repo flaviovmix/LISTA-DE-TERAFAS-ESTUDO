@@ -1,9 +1,8 @@
-package app.tarefas;
+package app.Tarefas;
 
 import java.sql.Date;
 
 public class TarefaBean {
-    
     private int id_tarefa;
     private String titulo;
     private String descricao;
@@ -12,10 +11,7 @@ public class TarefaBean {
     private String responsavel;
     private Date data_criacao;
     private Date data_conclusao;
-    
-    // Atributo que armazena a quantidade de subtarefas associadas a esta tarefa.
-    // Pode ser nulo, por isso foi usado o tipo wrapper (Revestimento) Integer (em vez de int).
-    private Integer quantidade_de_subtarefas;
+    private boolean ativo;
 
     public int getId_tarefa() {
         return id_tarefa;
@@ -51,16 +47,6 @@ public class TarefaBean {
     public void setPrioridade(String prioridade) {
         this.prioridade = prioridade;
     }
-    
-    public boolean isPrioridadeBaixa(){
-        return ("baixa".equals(getPrioridade()));
-    }
-    public boolean isPrioridadeMedia(){
-        return ("media".equals(getPrioridade()));
-    }
-    public boolean isPrioridadeAlta(){
-        return ("alta".equals(getPrioridade()));
-    }
 
     public String getResponsavel() {
         return responsavel;
@@ -68,7 +54,7 @@ public class TarefaBean {
     public void setResponsavel(String responsavel) {
         this.responsavel = responsavel;
     }
-    
+
     public Date getData_criacao() {
         return data_criacao;
     }
@@ -82,14 +68,12 @@ public class TarefaBean {
     public void setData_conclusao(Date data_conclusao) {
         this.data_conclusao = data_conclusao;
     }
-   
-    // Retorna a quantidade de subtarefas associadas a esta tarefa.
-    public Integer getQuantidade_de_subtarefas() {
-        return quantidade_de_subtarefas;
+
+    public boolean isAtivo() {
+        return ativo;
+    }
+    public void setAtivo(boolean ativo) {
+        this.ativo = ativo;
     }
 
-    // Define a quantidade de subtarefas associadas a esta tarefa.
-    public void setQuantidade_de_subtarefas(Integer valor) {
-        this.quantidade_de_subtarefas = valor;
-    }
 }

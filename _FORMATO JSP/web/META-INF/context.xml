@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Context path="/lista_tarefas" useHttpOnly="false">
+    <Resource
+        name="jdbc/MeuDB"
+        auth="Container"
+        type="javax.sql.DataSource"
+        factory="org.apache.tomcat.dbcp.dbcp2.BasicDataSourceFactory"
+        driverClassName="org.postgresql.Driver"
+        url="jdbc:postgresql://localhost:5432/lista_tarefas"
+        username="postgres"
+        password="masterkey"
+
+        maxTotal="100"
+        maxIdle="10"
+        maxWaitMillis="10000"
+
+        validationQuery="SELECT 1"
+        testOnBorrow="true"
+        testWhileIdle="true"
+        timeBetweenEvictionRunsMillis="30000"
+        minEvictableIdleTimeMillis="600000"
+        removeAbandonedOnBorrow="true"
+        removeAbandonedTimeout="60"
+    />
+</Context>
