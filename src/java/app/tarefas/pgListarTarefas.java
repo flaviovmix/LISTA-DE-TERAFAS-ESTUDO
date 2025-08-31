@@ -18,6 +18,9 @@ public class pgListarTarefas {
 
     public String html(boolean ativoOuInativo) throws Exception {
         
+        String check_ativa = (ativoOuInativo ? " check" : "");
+        String check_inativa = (!ativoOuInativo ? " check" : "");
+        
         StringBuilder out = new StringBuilder();
 
         out.append(head()); 
@@ -25,22 +28,24 @@ public class pgListarTarefas {
 
         out.append(taskList("abre")); 
         
-        out.append("<input type='radio' name='tabs' id='tab-inativas'>");
-        out.append("<input type='radio' name='tabs' id='tab-ativas' checked>");
+            out.append("<input type='radio' name='tabs' id='tab-inativas'>");
+            out.append("<input type='radio' name='tabs' id='tab-ativas' checked>");
 
-        out.append("<label for='tab-ativas' onclick=\"window.location.href='")
-           .append(url(TarefasActions.ListarAtivas.class))
-           .append("'\">Ativas</label>");
+            out.append("<div class='tabs'>");
+            out.append("  <label class='" + check_ativa + "' onclick=\"window.location.href='")
+               .append(url(TarefasActions.ListarAtivas.class))
+               .append("'\">Ativas</label>");
 
-        out.append("<label for='tab-inativas' onclick=\"window.location.href='")
-           .append( url(TarefasActions.ListarInativas.class))
-           .append("'\">Inativas</label>");
+            out.append("  <label class='" + check_inativa + "' onclick=\"window.location.href='")
+               .append(url(TarefasActions.ListarInativas.class))
+               .append("'\">Inativas</label>");
+            out.append("</div>");
 
-        out.append("<div class='tab-content content-ativas'>");
-        out.append("  <div class='task-list'>");
-        out.append(    itemLista(ativoOuInativo));
-        out.append("  </div>");
-        out.append("</div>");
+            out.append("<div class='tab-content content-ativas'>");
+            out.append("  <div class='task-list'>");
+            out.append(    itemLista(ativoOuInativo));
+            out.append("  </div>");
+            out.append("</div>");
 
         out.append(taskList("fecha")); 
         out.append(modalDeletar()); 
