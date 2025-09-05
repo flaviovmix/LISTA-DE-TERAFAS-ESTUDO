@@ -13,7 +13,40 @@ public class TarefaImplementacao {
         this.manager = manager;
     }
     
-    public String listaTarefa(boolean ativoOuInativo) throws Exception{
+    
+    public String listaDetarefas(boolean ativoOuInativo) throws Exception {
+        TarefaImplementacao implementacao = new TarefaImplementacao(manager);
+         
+        String check_ativa = (ativoOuInativo ? " check" : "");
+        String check_inativa = (!ativoOuInativo ? " check" : "");
+
+        StringBuilder out = new StringBuilder();
+        out.append(interfaces.taskList("abre")); 
+        
+        out.append("<input type='radio' name='tabs' id='tab-inativas'>");
+        out.append("<input type='radio' name='tabs' id='tab-ativas' checked>");
+
+        out.append("<div class='tabs'>");
+        out.append("  <label class='" + check_ativa + "' onclick=\"window.location.href='")
+           .append(url(TarefasActions.ListarAtivas.class))
+           .append("'\">Ativas</label>");
+
+        out.append("  <label class='" + check_inativa + "' onclick=\"window.location.href='")
+           .append(url(TarefasActions.ListarInativas.class))
+           .append("'\">Inativas</label>");
+        out.append("</div>");
+
+        out.append("<div class='tab-content content-ativas'>");
+        out.append("  <div class='task-list'>");
+        out.append(    implementacao.listarTarefa(ativoOuInativo));
+        out.append("  </div>");
+        out.append("</div>");
+        out.append(interfaces.taskList("fecha"));
+        
+        return out.toString();
+    }     
+    
+    public String listarTarefa(boolean ativoOuInativo) throws Exception{
 
         TarefaDAO dao = new TarefaDAO(manager);
 
@@ -65,4 +98,8 @@ public class TarefaImplementacao {
 
         return out.toString();
      }   
+    
+    
+    
+    
 }

@@ -1,4 +1,4 @@
-package app;
+package app.Tarefas;
 
 import app.DetalhesTarefa.detalhesTarefasActions;
 import static br.jasap.core.AppManager.url;
