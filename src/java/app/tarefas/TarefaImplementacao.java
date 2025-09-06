@@ -1,5 +1,6 @@
 package app.Tarefas;
 
+import app.Paginas.interfaces;
 import app.DetalhesTarefa.detalhesTarefasActions;
 import br.jasap.core.AppManager;
 import static br.jasap.core.AppManager.url;
@@ -28,11 +29,11 @@ public class TarefaImplementacao {
 
         out.append("<div class='tabs'>");
         out.append("  <label class='" + check_ativa + "' onclick=\"window.location.href='")
-           .append(url(TarefasActions.ListarAtivas.class))
+           //.append(url(TarefasActions.ListarAtivas.class))
            .append("'\">Ativas</label>");
 
         out.append("  <label class='" + check_inativa + "' onclick=\"window.location.href='")
-           .append(url(TarefasActions.ListarInativas.class))
+           //.append(url(TarefasActions.ListarInativas.class))
            .append("'\">Inativas</label>");
         out.append("</div>");
 

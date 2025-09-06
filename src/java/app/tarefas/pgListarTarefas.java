@@ -1,5 +1,6 @@
 package app.Tarefas;
 
+import app.Paginas.interfaces;
 import br.jasap.core.AppManager;
 
 public class pgListarTarefas {
